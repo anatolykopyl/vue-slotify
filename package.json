@@ -7,7 +7,7 @@
     "url": "https://kopyl.dev"
   },
   "homepage": "https://anatolykopyl.github.io/vue-slotify/",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "files": [
     "dist"
