@@ -11,7 +11,7 @@ const slotToStringClient = (slotVal: Slot): string => {
 }
 
 const slotToStringServer = async (slotVal: Slot): Promise<string> => {
-  const tempApp = createSSRApp({ render: slotVal })
+  const tempApp = createSSRApp(h(slotVal))
   return renderToString(tempApp)
 }
 
@@ -43,8 +43,6 @@ export const slotifySSR = (
   component: Component,
   slotToProp = (slotName: string) => slotName
 ): Component => {
-  if ((process as any).client) return slotify(component, slotToProp)
-
   return {
     async setup(props, { slots }) {
       let slotProps = []
