@@ -1,6 +1,12 @@
 {
   "name": "vue-slotify",
-  "private": true,
+  "license": "GPL-3.0",
+  "author": {
+    "email": "hi@kopyl.dev",
+    "name": "Anatoly Kopyl",
+    "url": "https://kopyl.dev"
+  },
+  "homepage": "https://anatolykopyl.github.io/vue-slotify/",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
