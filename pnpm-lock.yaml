@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      vue:
-        specifier: ^3.5.17
-        version: 3.5.17(typescript@5.8.3)
     devDependencies:
       '@types/node':
         specifier: ^24.0.7
@@ -27,6 +23,9 @@ importers:
       vitepress-plugin-group-icons:
         specifier: ^1.6.0
         version: 1.6.0(markdown-it@14.1.0)(vite@7.0.0(@types/node@24.0.7))
+      vue:
+        specifier: ^3.5.17
+        version: 3.5.17(typescript@5.8.3)
 
 packages:
 
