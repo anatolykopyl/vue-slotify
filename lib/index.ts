@@ -48,14 +48,16 @@ export function slotify(
   component: Component,
   slotToProp = (slotName: string) => slotName,
 ): Component {
-  const ime = (import.meta as any).env
-  if (ime && ime.SSR) {
-    return {
-      setup: makeSetupSSR(component, slotToProp),
-    }
-  }
-
   return {
     setup: makeSetupCSR(component, slotToProp),
+  }
+}
+
+export function slotifySSR(
+  component: Component,
+  slotToProp = (slotName: string) => slotName,
+): Component {
+  return {
+    setup: makeSetupSSR(component, slotToProp),
   }
 }
