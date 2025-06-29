@@ -128,9 +128,4 @@ const SlotifiedCard = slotify(PropsCard, ((slotName) => {   // [!code highlight]
 
 ## SSR
 
-For SSR usage `vue-slotify` exports `slotifySSR` with the same API as the normal `slotify` function.
-
-```typescript
-import { slotifySSR } from "vue-slotify"
-const SlotifiedComponent = slotifySSR(Component)
-```
+`vue-slotify` works in SSR the same way it works in CSR.

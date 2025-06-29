@@ -1,25 +1,26 @@
 {
   "name": "vue-slotify",
-  "license": "GPL-3.0",
+  "type": "module",
+  "version": "1.1.0",
+  "packageManager": "pnpm@10.12.4",
   "author": {
     "email": "hi@kopyl.dev",
     "name": "Anatoly Kopyl",
     "url": "https://kopyl.dev"
   },
+  "license": "GPL-3.0",
   "homepage": "https://anatolykopyl.github.io/vue-slotify/",
-  "version": "1.0.3",
-  "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/vue-slotify.umd.cjs",
-  "module": "./dist/vue-slotify.js",
   "exports": {
     ".": {
       "import": "./dist/vue-slotify.js",
       "require": "./dist/vue-slotify.umd.cjs"
     }
   },
+  "main": "./dist/vue-slotify.umd.cjs",
+  "module": "./dist/vue-slotify.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -38,6 +39,5 @@
     "vitepress": "^1.6.3",
     "vitepress-plugin-group-icons": "^1.6.0",
     "vue": "^3.5.17"
-  },
-  "packageManager": "pnpm@10.12.4"
+  }
 }
