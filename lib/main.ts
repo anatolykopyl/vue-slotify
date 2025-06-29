@@ -1,0 +1,30 @@
+import { type Component, computed, h, createApp } from 'vue'
+
+export const slotify = (
+  component: Component, 
+  propToSlot = (propName: string) => propName
+): Component => {
+  return {
+    setup(props, {slots}) {
+      const children = computed(() => {
+        if (!slots) return []
+
+        return Object.fromEntries(Object.entries(slots).map(([slotKey, slotVal]) => {
+          const tempApp = createApp({
+            render: slotVal
+          })
+
+          const el = document.createElement('div');
+          const mountedApp = tempApp.mount(el)
+
+          return [slotKey, mountedApp.$el.parentNode.innerHTML]
+        }))
+      })
+
+      return () => h(component, {
+        ...props,
+        ...children.value
+      })
+    }
+  }
+}

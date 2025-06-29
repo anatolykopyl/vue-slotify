@@ -1,0 +1,13 @@
+.card {
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid lightgray;
+  display: grid;
+  gap: 16px;
+  margin-top: 64px;
+  max-width: 300px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
