@@ -84,7 +84,7 @@ This is useful when working with existing components from other packages.
 <script setup lang="ts">
 defineProps<{
   title: string
-  body: string
+  body: string // [!code highlight]
   footer: string
 }>()
 </script>
@@ -92,7 +92,7 @@ defineProps<{
 <template>
   <div class="card">
     <h3 v-html="title"></h3>
-    <div v-html="body"></div>
+    <div v-html="body"></div> <!-- [!code highlight] -->
     <div v-html="footer"></div>
   </div>
 </template>
