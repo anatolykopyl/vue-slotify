@@ -29,7 +29,9 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^4.16.1",
     "@types/node": "^24.0.7",
+    "eslint": "^9.30.0",
     "typescript": "~5.8.3",
     "vite": "^7.0.0",
     "vite-plugin-dts": "^4.5.4",

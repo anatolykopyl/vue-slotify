@@ -10,8 +10,8 @@ defineProps<{
 
 <template>
   <div class="card">
-    <h3 v-html="title"></h3>
-    <div v-html="body"></div>
-    <div v-html="footer"></div>
+    <h3 v-html="title" />
+    <div v-html="body" />
+    <div v-html="footer" />
   </div>
 </template>

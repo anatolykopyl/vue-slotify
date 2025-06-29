@@ -5,13 +5,13 @@ defineProps<{
 </script>
 
 <template>
-  <span 
+  <span
     class="badge"
     :style="{
-      backgroundColor: color
+      backgroundColor: color,
     }"
   >
-    <slot/>
+    <slot />
   </span>
 </template>
 
