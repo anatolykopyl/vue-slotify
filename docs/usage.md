@@ -48,7 +48,7 @@ import {slotify} from "vue-slotify"
 import Badge from "./Badge.vue"
 import PropsCard from "./PropsCard.vue"
 
-const SlotifiedCard = slotify(PropsCard)
+const SlotifiedCard = slotify(PropsCard) // [!code highlight]
 </script>
 
 <template>
@@ -106,10 +106,10 @@ import {slotify} from "vue-slotify"
 import Badge from "./Badge.vue"
 import PropsCard from "./PropsCard.vue"
 
-const SlotifiedCard = slotify(PropsCard, ((slotName) => {
-  if (slotName === 'default') return 'body'
-  return slotName
-}))
+const SlotifiedCard = slotify(PropsCard, ((slotName) => {   // [!code highlight]
+  if (slotName === 'default') return 'body'                 // [!code highlight]
+  return slotName                                           // [!code highlight]
+}))                                                         // [!code highlight]
 </script>
 
 <template>
