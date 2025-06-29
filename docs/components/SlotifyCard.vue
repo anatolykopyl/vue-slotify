@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Badge from "./Badge.vue"
 import PropsCard from "./PropsCard.vue"
-import {slotify} from "../.."
+import {slotify} from "../../lib"
 
 const SlotifiedCard = slotify(PropsCard, (propsKey) => {
   if (propsKey === 'default') return 'body'

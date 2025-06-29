@@ -4,8 +4,21 @@ layout: home
 
 hero:
   name: "Vue Slotify"
-  text: ""
   tagline: Make props-driven components slot-driven
+  actions:
+    - theme: brand
+      text: Get Started
+      link: /usage
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/anatolykopyl/vue-slotify
 
+features:
+  - icon: 👾
+    title: Simple and minimal
+    details: 13.5 kb
+
+  - icon: 🧠
+    title: Compatible
+    details: Can be used to nest Vue components
 ---
-

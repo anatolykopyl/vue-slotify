@@ -8,7 +8,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      {text: 'Usage', link: '/usage'}
+      { text: 'Usage', link: '/usage' }
     ],
 
     socialLinks: [
@@ -22,7 +22,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      groupIconVitePlugin()
+      groupIconVitePlugin() as never
     ],
   }
 })
