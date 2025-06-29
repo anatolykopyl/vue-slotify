@@ -3,7 +3,7 @@ import './style.css'
 
 defineProps<{
   title: string
-  default: string
+  body: string
   footer: string
 }>()
 </script>
@@ -11,7 +11,7 @@ defineProps<{
 <template>
   <div class="card">
     <h3 v-html="title"></h3>
-    <div v-html="default"></div>
+    <div v-html="body"></div>
     <div v-html="footer"></div>
   </div>
 </template>

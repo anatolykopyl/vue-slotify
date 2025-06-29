@@ -3,13 +3,16 @@ import Badge from "./Badge.vue"
 import PropsCard from "./PropsCard.vue"
 import {slotify} from "../../lib/main"
 
-const SlotifiedCard = slotify(PropsCard)
+const SlotifiedCard = slotify(PropsCard, (propsKey) => {
+  if (propsKey === 'default') return 'body'
+  return propsKey
+})
 </script>
 
 <template>
   <SlotifiedCard>
     <template #title>Card title</template>
-    Hello <badge>World</badge>!
+    Hello <badge color="coral">World</badge>!
     <template #footer>
       <small>Card footer</small>
     </template>
