@@ -16,8 +16,11 @@ export const slotify = (
 
           const el = document.createElement('div');
           const mountedApp = tempApp.mount(el)
+          const content = mountedApp.$el.parentNode.innerHTML
 
-          return [slotToProp(slotKey), mountedApp.$el.parentNode.innerHTML]
+          tempApp.unmount()
+
+          return [slotToProp(slotKey), content]
         }))
       })
 
