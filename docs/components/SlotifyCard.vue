@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import PropsCard from "./components/PropsCard.vue"
-import {slotify} from "../lib/main"
+import Badge from "./Badge.vue"
+import PropsCard from "./PropsCard.vue"
+import {slotify} from "../../lib/main"
 
 const SlotifiedCard = slotify(PropsCard)
 </script>
@@ -8,7 +9,7 @@ const SlotifiedCard = slotify(PropsCard)
 <template>
   <SlotifiedCard>
     <template #title>Card title</template>
-    Hello <strong>World</strong>!
+    Hello <badge>World</badge>!
     <template #footer>
       <small>Card footer</small>
     </template>

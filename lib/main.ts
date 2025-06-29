@@ -6,7 +6,7 @@ export const slotify = (
 ): Component => {
   return {
     setup(props, {slots}) {
-      const children = computed(() => {
+      const childrenProps = computed(() => {
         if (!slots) return []
 
         return Object.fromEntries(Object.entries(slots).map(([slotKey, slotVal]) => {
@@ -23,7 +23,7 @@ export const slotify = (
 
       return () => h(component, {
         ...props,
-        ...children.value
+        ...childrenProps.value
       })
     }
   }

@@ -16,3 +16,9 @@ Given a component that takes in it's content from it's props, `slotify` can make
 <<< @/components/PropsCard.vue
 
 <<< @/components/SlotifyCard.vue
+
+<script setup lang="ts">
+import SlotifyCard from "./components/SlotifyCard.vue"
+</script>
+
+<SlotifyCard />
