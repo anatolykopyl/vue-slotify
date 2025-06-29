@@ -43,6 +43,8 @@ export const slotifySSR = (
   component: Component,
   slotToProp = (slotName: string) => slotName
 ): Component => {
+  if (window) return slotify(component, slotToProp)
+
   return {
     async setup(props, { slots }) {
       let slotProps = []
