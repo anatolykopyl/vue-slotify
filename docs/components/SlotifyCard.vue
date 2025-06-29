@@ -12,7 +12,7 @@ const SlotifiedCard = slotify(PropsCard, (propsKey) => {
 <template>
   <SlotifiedCard>
     <template #title>Card title</template>
-    Hello <badge color="coral">World</badge>!
+    Hello <badge color="var(--vp-c-yellow-soft)">World</badge>!
     <template #footer>
       <small>Card footer</small>
     </template>

@@ -21,8 +21,6 @@ export const slotify = (
         }))
       })
 
-      console.log(childrenProps.value)
-
       return () => h(component, {
         ...props,
         ...childrenProps.value

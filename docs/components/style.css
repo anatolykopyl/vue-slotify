@@ -1,11 +1,18 @@
 .card {
   padding: 32px;
   border-radius: 16px;
-  border: 1px solid lightgray;
+  border: 1px solid var(--vp-c-border);
   display: grid;
   gap: 16px;
   margin-top: 32px;
   max-width: 300px;
+  background-color: var(--vp-c-bg-elv);
+  box-shadow: var(--vp-shadow-3);
+  transition: scale .3s;
+}
+
+.card:hover {
+  scale: 1.03;
 }
 
 .card h3 {
