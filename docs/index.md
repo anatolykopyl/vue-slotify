@@ -21,4 +21,8 @@ features:
   - icon: 🧠
     title: Compatible
     details: Can be used to nest Vue components
+
+  - icon: ☁️
+    title: SSR
+    details: Works both with CSR and SSR
 ---

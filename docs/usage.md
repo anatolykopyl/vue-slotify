@@ -125,3 +125,12 @@ const SlotifiedCard = slotify(PropsCard, ((slotName) => {
 </template>
 ```
 :::
+
+## SSR
+
+For SSR usage `vue-slotify` exports `slotifySSR` with the same API as the normal `slotify` function.
+
+```typescript
+import { slotifySSR } from "vue-slotify"
+const SlotifiedComponent = slotifySSR(Component)
+```
