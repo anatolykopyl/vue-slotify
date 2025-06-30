@@ -1,28 +1,36 @@
-# Usage
+# Slotify
 
-## Install
-
-::: code-group
-```sh [npm]
-npm install -D vue-slotify
-```
-```sh [yarn]
-yarn add -D vue-slotify
-```
-```sh [pnpm]
-pnpm add -D vue-slotify
-```
-```sh [bun]
-bun add -D vue-slotify
-```
-:::
+This does the opposite of `propsify`. It turns all the props of a component into slots.
 
 ## Basic Example
 
 Given a component that takes in it's content from it's props, `slotify` can make it take in the content from slots.
 
 ::: code-group
-```vue
+
+```vue [App.vue]
+<script setup lang="ts">
+import {slotify} from "vue-slotify"
+import Badge from "./Badge.vue"
+import PropsCard from "./PropsCard.vue"
+
+const SlotifiedCard = slotify(PropsCard) // [!code highlight]
+</script>
+
+<template>
+  <SlotifiedCard>
+    <template #title>Card title</template>
+
+    Hello <Badge type="warning">World</Badge>!
+
+    <template #footer>
+      <small>Card footer</small>
+    </template>
+  </SlotifiedCard>
+</template>
+```
+
+```vue [PropsCard.vue]
 <script setup lang="ts">
 defineProps<{
   title: string
@@ -41,37 +49,26 @@ defineProps<{
 ```
 :::
 
-::: code-group
-```vue
-<script setup lang="ts">
-import {slotify} from "vue-slotify"
-import Badge from "./Badge.vue"
-import PropsCard from "./PropsCard.vue"
-
-const SlotifiedCard = slotify(PropsCard) // [!code highlight]
-</script>
-
-<template>
-  <SlotifiedCard>
-    <template #title>Card title</template>
-
-    Hello <badge color="coral">World</badge>!
-
-    <template #footer>
-      <small>Card footer</small>
-    </template>
-  </SlotifiedCard>
-</template>
-```
-:::
-
-<script setup lang="ts">
-import SlotifyCard from "./components/SlotifyCard.vue"
-</script>
-
 ### Output
 
-<SlotifyCard />
+<script setup lang="ts">
+import PropsCard from "../components/PropsCard.vue"
+import {slotify} from "../../lib"
+</script>
+
+<component 
+  :is="slotify(PropsCard)" 
+>
+  <template #title>Card title</template>
+
+  <template #body>
+    Hello <Badge type="warning">World</Badge>!
+  </template>
+
+  <template #footer>
+    <small>Card footer</small>
+  </template>
+</component>
 
 
 ## `slotToProp` Example
@@ -80,27 +77,7 @@ import SlotifyCard from "./components/SlotifyCard.vue"
 This is useful when working with existing components from other packages.
 
 ::: code-group
-```vue
-<script setup lang="ts">
-defineProps<{
-  title: string
-  body: string // [!code highlight]
-  footer: string
-}>()
-</script>
-
-<template>
-  <div class="card">
-    <h3 v-html="title"></h3>
-    <div v-html="body"></div> <!-- [!code highlight] -->
-    <div v-html="footer"></div>
-  </div>
-</template>
-```
-:::
-
-::: code-group
-```vue
+```vue [App.vue]
 <script setup lang="ts">
 import {slotify} from "vue-slotify"
 import Badge from "./Badge.vue"
@@ -116,12 +93,30 @@ const SlotifiedCard = slotify(PropsCard, ((slotName) => {   // [!code highlight]
   <SlotifiedCard>
     <template #title>Card title</template>
 
-    Hello <badge color="coral">World</badge>!
+    Hello <Badge type="warning">World</Badge>!
 
     <template #footer>
       <small>Card footer</small>
     </template>
   </SlotifiedCard>
+</template>
+```
+
+```vue [PropsCard.vue]
+<script setup lang="ts">
+defineProps<{
+  title: string
+  body: string // [!code highlight]
+  footer: string
+}>()
+</script>
+
+<template>
+  <div class="card">
+    <h3 v-html="title"></h3>
+    <div v-html="body"></div> <!-- [!code highlight] -->
+    <div v-html="footer"></div>
+  </div>
 </template>
 ```
 :::

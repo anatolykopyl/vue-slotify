@@ -8,11 +8,27 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Usage', link: '/usage' },
+      { text: 'Guide', link: '/guide/getting-started' },
     ],
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/anatolykopyl/vue-slotify' },
+      { icon: 'npm', link: 'https://www.npmjs.com/package/vue-slotify' },
+    ],
+
+    sidebar: [
+      {
+        text: 'Getting Started',
+        link: '/guide/getting-started',
+      },
+      {
+        text: 'Slotify',
+        link: '/guide/slotify',
+      },
+      {
+        text: 'Propsify',
+        link: '/guide/propsify',
+      },
     ],
   },
   markdown: {
