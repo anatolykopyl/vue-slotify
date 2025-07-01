@@ -1,8 +1,11 @@
 <script setup lang="ts">
+defineProps<{
+  footer: string
+}>()
+
 defineSlots<{
   title: () => any
   body: () => any
-  footer: () => any
 }>()
 </script>
 
@@ -10,6 +13,6 @@ defineSlots<{
   <div>
     <div><slot name="title" /></div>
     <div><slot name="body" /></div>
-    <div><slot name="footer" /></div>
+    <div>{{ footer }}</div>
   </div>
 </template>

@@ -3,7 +3,7 @@ import { expect, it } from 'vitest'
 import { slotify } from '../../lib/slotify'
 import PropsCard from './PropsCard.vue'
 
-it('slotify', () => {
+it('has same text', () => {
   const slotProps = {
     title: 'Title',
     body: 'Body',
