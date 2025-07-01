@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import './style.css'
-
 defineProps<{
   title: string
   body: string
