@@ -20,3 +20,25 @@ it('has same text', () => {
 
   expect(original.text()).toBe(wrapped.text())
 })
+
+it('preserves props', () => {
+  const original = mount(PropsCard, {
+    props: {
+      title: 'Title',
+      body: 'Body',
+      footer: 'Footer',
+    },
+  })
+
+  const wrapped = mount(slotify(PropsCard), {
+    props: {
+      title: 'Title',
+    },
+    slots: {
+      body: 'Body',
+      footer: 'Footer',
+    },
+  })
+
+  expect(original.text()).toBe(wrapped.text())
+})

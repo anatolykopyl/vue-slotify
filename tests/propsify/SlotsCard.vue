@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  footer: string
+  footer?: string
 }>()
 
 defineSlots<{
